@@ -43,6 +43,9 @@ resource "azurerm_windows_virtual_machine" "example" {
   network_interface_ids = [
     azurerm_network_interface.nic.id,
   ]
+  tags = {
+    environment = "lab"
+  }
 
   os_disk {
     caching              = "ReadWrite"
